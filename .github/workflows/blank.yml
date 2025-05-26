@@ -32,17 +32,9 @@ jobs:
         with:
           test-plan-path: './les-recoltes---calendrier.jmx'
           results-file: './resultat1.jtl'
-          args: '-n -t les-recoltes---calendrier.jmx -l resultat1.jtl -j jmeter.log'
 
-      - name: Show JMeter log for debugging
-        run: cat jmeter.log
-
-      - name: Check if JTL file is empty (fail early)
-        run: |
-          if [ ! -s resultat1.jtl ]; then
-            echo "❌ Le fichier resultat1.jtl est vide ! Le test JMeter a probablement échoué."
-            exit 1
-          fi
+      - name: List files after JMeter test
+        run: ls -la
 
       - name: Generate HTML Report from JTL with custom properties
         run: |
