@@ -30,7 +30,7 @@ jobs:
       - name: Run JMeter test with PerfAction
         uses: QAInsights/PerfAction@v5.6.3
         with:
-          test-plan-path: './mytechall1.jmx'
+          test-plan-path: './les-recoltes---calendrier.jmx'
           results-file: './resultat1.jtl'
 
       - name: List files after JMeter test
